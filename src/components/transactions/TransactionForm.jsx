@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useState } from 'react'
-import {  useGlobalState } from '../context/GlobalState'
+import {  useGlobalState } from '../../context/GlobalState'
 
 export default function TransactionForm() {
  const {addTransaction}=useGlobalState()
@@ -8,7 +8,7 @@ export default function TransactionForm() {
   const [amount, setamount] = useState(0)
 const onSubmit=(e)=>{
   e.preventDefault()
-    addTransaction({id:1,description,amount})//seria action.payload
+    addTransaction({ id:window.crypto.randomUUID(),description,amount})//seria action.payload
 }
   return (
     <div>
