@@ -13,7 +13,11 @@ export const useGlobalState = () => {
 };
 
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [state, dispatch] = useReducer(AppReducer, initialState, () => {
+    const localData = localStorage.getItem("transactions");
+    return localData ? JSON.parse(localData) : initialState;
+  });
+
   const addTransaction = (transaction) => {
     dispatch({
       //solo envia la action
@@ -25,14 +29,18 @@ export const GlobalProvider = ({ children }) => {
     dispatch({
       //solo envia la action
       type: "DELETE_TRANSACTION", //seria el action.type
-      payload: id //seria el action.payload(puede ser el id,description o amount)
+      payload: id, //seria el action.payload(puede ser el id,description o amount)
     });
   };
 
   return (
     // sirve tambien para enviar funciones a todos los componentes
     <Context.Provider
-      value={{ transactions: state.transactions, addTransaction,deleteTransaction }}
+      value={{
+        transactions: state.transactions,
+        addTransaction,
+        deleteTransaction,
+      }}
     >
       {children}
     </Context.Provider>
