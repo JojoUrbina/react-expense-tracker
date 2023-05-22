@@ -10,8 +10,7 @@ export default function Balance() {
   return (
     <div>
       <h1>Your Balance</h1>
-      {total}<br/>
-      {JSON.stringify(total, null, 2)}
+      {total}
     </div>
   );
 }
