@@ -1,8 +1,17 @@
 import { useGlobalState } from '../context/GlobalState'
 
 export default function Balance() {
-    const data=useGlobalState()
+    const {transactions}=useGlobalState();
+    const amounts =transactions.map((transaction)=>transaction.amount)
+   const total=amounts.reduce((acc,item)=>{
+    return acc+item;
+   },0)
+
   return (
-    <div>balance</div>
-  )
+    <div>
+      <h1>Your Balance</h1>
+      {total}<br/>
+      {JSON.stringify(total, null, 2)}
+    </div>
+  );
 }
