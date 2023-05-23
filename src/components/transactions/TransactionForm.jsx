@@ -24,7 +24,8 @@ export default function TransactionForm() {
         />
         <input
           type="number"
-          placeholder="00.0"
+          placeholder="00.00"
+          step="0.01"
           onChange={(e) => setamount(e.target.value)}
           className="bg-zinc-500 text-white px-3 py-2 mb-2 rounded-lg block  w-full"
         />

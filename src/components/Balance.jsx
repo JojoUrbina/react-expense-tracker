@@ -5,7 +5,7 @@ export default function Balance() {
   const amounts = transactions.map((transaction) => transaction.amount);
   const total = amounts.reduce((acc, item) => {
     return acc + item;
-  }, 0);
+  }, 0).toFixed(2);
 
   return (
     <div>
