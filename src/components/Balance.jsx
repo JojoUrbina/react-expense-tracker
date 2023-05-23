@@ -8,9 +8,9 @@ export default function Balance() {
   }, 0).toFixed(2);
 
   return (
-    <div>
-      <h1>Your Balance</h1>
-      {total}
+    <div className="flex justify-between">
+      <h3>Your Balance</h3>
+      <h1 className="text-2x1 font-bold">{total}</h1>
     </div>
   );
 }
