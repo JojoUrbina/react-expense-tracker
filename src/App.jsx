@@ -18,7 +18,9 @@ function App() {
             <Balance />
             <TransactionForm />
           </div>
-          <TransactionList />
+          <div>
+            <TransactionList />
+          </div>
         </div>
       </div>
     </GlobalProvider>
