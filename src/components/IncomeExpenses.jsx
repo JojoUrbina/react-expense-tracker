@@ -13,11 +13,11 @@ export default function IncomeExpenses() {
                     .toFixed(2)*-1;
    return (
     <>
-      <div>
+      <div className="flex justify-between my-2">
         <h2>Income</h2>
         <p>{income}</p>
       </div>
-      <div>
+      <div  className="flex justify-between my-2">
         <h2>Expenses</h2>
         <p>{expense}</p>
       </div>
