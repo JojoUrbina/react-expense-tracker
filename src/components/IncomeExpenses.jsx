@@ -14,7 +14,7 @@ export default function IncomeExpenses() {
    return (
     <>
       <div className="flex justify-between my-2">
-        <h2>Income</h2>
+        <h2>Incomes</h2>
         <p>{income}</p>
       </div>
       <div  className="flex justify-between my-2">

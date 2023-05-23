@@ -14,15 +14,22 @@ export default function ExpenseChart() {
     (totalExpenses / totalIncomes) * 100
   );
   const totalIncomesPercentage = 100 - totalExpensesPercentage;
-  console.log(totalExpensesPercentage);
-  console.log(totalIncomesPercentage);
+
+  console.log(isNaN(totalIncomesPercentage) ? 0 : totalIncomesPercentage);
+  console.log(isNaN(totalExpensesPercentage) ? 0 : totalExpensesPercentage);
 
   return (
     <VictoryPie
-      colorScale={["#2ecc71","#e74c3c" ]}
+      colorScale={["#2ecc71", "#e74c3c"]}
       data={[
-        { x: "Incomes", y: totalIncomesPercentage},
-        { x: "Expenses", y: totalExpensesPercentage },
+        {
+          x: "Incomes",
+          y: isNaN(totalIncomesPercentage) ? 0 : totalIncomesPercentage,
+        },
+        {
+          x: "Expenses",
+          y: isNaN(totalExpensesPercentage) ? 0 : totalExpensesPercentage,
+        },
       ]}
       animate={{ duration: 2000 }}
       labelComponent={
