@@ -15,7 +15,7 @@ export const useGlobalState = () => {
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState, () => {
     const localData = localStorage.getItem("transactions");
-    console.log(localData)
+    
     return localData ? JSON.parse(localData) : initialState;
   });
   useEffect(()=>{
