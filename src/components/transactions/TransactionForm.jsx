@@ -7,11 +7,11 @@ export default function TransactionForm() {
   const [amount, setamount] = useState(0);
   const onSubmit = (e) => {
     e.preventDefault();
-    addTransaction(
-      { id: window.crypto.randomUUID(), 
-        description, 
-        amount:+amount //el + hace que se convierta de string numerico a numero
-      }); //seria action.payload
+    addTransaction({
+      id: window.crypto.randomUUID(),
+      description,
+      amount: +amount, //el + hace que se convierta de string numerico a numero
+    }); //seria action.payload
   };
   return (
     <div>
@@ -20,13 +20,15 @@ export default function TransactionForm() {
           type="text"
           placeholder="Enter a Description"
           onChange={(e) => setDescription(e.target.value)}
+          className="bg-zinc-500 text-white px-3 py-2 mb-2 rounded-lg block  w-full"
         />
         <input
           type="number"
           placeholder="00.0"
           onChange={(e) => setamount(e.target.value)}
+          className="bg-zinc-500 text-white px-3 py-2 mb-2 rounded-lg block  w-full"
         />
-        <button> Add Transaction</button>
+        <button className="bg-indigo-700 text-white px-3 py-2 mb-2 w-full rounded-lg block"> Add Transaction</button>
       </form>
     </div>
   );
