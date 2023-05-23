@@ -12,7 +12,7 @@ function App() {
   return (
     <GlobalProvider>
       <div className="bg-zinc-800 text-white h-screen flex justify-center items-center">
-       <div className="container mx-auto w-2/6">
+       <div className="container mx-auto w-3/6">
        <div className="bg-zinc-700 p-10 rounded-lg flex gap-x-2 ">
           <div >
             <h1 className="text-4xl font-bold ">Expense Tracker</h1>
@@ -20,8 +20,8 @@ function App() {
             <Balance />
             <TransactionForm />
           </div>
-          <div className="w-full">
-            <ExpenseChart/>t
+          <div className="flex flex-col flex-1 ">
+            <ExpenseChart/>
             <TransactionList />
           </div>
         </div>
