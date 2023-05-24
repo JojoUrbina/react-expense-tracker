@@ -24,11 +24,11 @@ export default function ExpenseChart() {
       data={[
         {
           x: "Incomes",
-          y: isNaN(totalIncomesPercentage) ? 0 : totalIncomesPercentage,
+          y: isNaN(totalIncomesPercentage) ? 1 : totalIncomesPercentage,
         },
         {
           x: "Expenses",
-          y: isNaN(totalExpensesPercentage) ? 0 : totalExpensesPercentage,
+          y: isNaN(totalExpensesPercentage) ? 1 : totalExpensesPercentage,
         },
       ]}
       animate={{ duration: 2000 }}
@@ -43,3 +43,4 @@ export default function ExpenseChart() {
     />
   );
 }
+
